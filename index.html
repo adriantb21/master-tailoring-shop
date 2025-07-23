@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Expert tailoring, repair, and alteration services in Quezon City, Philippines.">
+  <title>Quezon City Tailoring & Repair</title>
+  <!-- CSS would be linked here in a separated file -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>QC Tailoring & Repair</h1>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </nav>
+      <div class="contact-number">📞 (02) 1234 5678</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Expert Tailoring and Alterations in Quezon City</h2>
+      <p>Custom tailoring, precision repairs, and perfect alterations—crafted with care and quality.</p>
+      <button id="openPricing">Get a Free Quote</button>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h3>Our Services</h3>
+      <ul>
+        <li><strong>Tailoring:</strong> Custom garments, resizing, restyling for suits, dresses, and more.</li>
+        <li><strong>Repairs:</strong> Zipper replacements, seam fixes, button repairs, tear restoration.</li>
+        <li><strong>Alterations:</strong> Hemming, sleeve and waist adjustments, pant tapering, and more.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h3>Before & After</h3>
+      <div class="portfolio-grid">
+        <img src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Before: Ill-fitting suit | After: Perfectly tailored suit">
+        <img src="https://images.pexels.com/photos/4202924/pexels-photo-4202924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Before: Baggy dress | After: Flattering silhouette">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h3>About Us</h3>
+      <p>With over 15 years of experience, QC Tailoring & Repair in Quezon City offers high-quality tailoring, repair, and alteration services. Our skilled tailors are passionate about every stitch, delivering excellence on every garment.</p>
+      <div style="display: flex; justify-content: center; margin-top: 30px;">
+        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Our tailoring workshop" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h3>What Our Clients Say</h3>
+      <blockquote>
+        "Best tailoring shop in Quezon City! My suit fits like a glove now."
+        <div class="testimonial-client">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark D.">
+          <span>– Mark D., Project Manager</span>
+        </div>
+      </blockquote>
+      <blockquote>
+        "They saved my favorite jeans! Seamless repair work."
+        <div class="testimonial-client">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana L.">
+          <span>– Ana L., Fashion Blogger</span>
+        </div>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h3>Contact Us</h3>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="text-align: center; margin-top: 30px;">
+        📍 123 Katipunan Ave, Quezon City, Philippines<br/>
+        📧 qctailoring@example.com<br/>
+        ⏰ Mon–Sat: 9am – 7pm
+      </p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123548.16716977585!2d121.0068195!3d14.6760413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec38b%3A0x69d1d5751069c11f!2sQuezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1710000000000!5m2!1sen!2sph"
+        width="100%"
+        height="300"
+        style="border:0; margin-top: 20px;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 QC Tailoring & Repair. All rights reserved.</p>
+      <div class="social">
+        <a href="#">Facebook</a> | <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="pricingModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h4>Service Pricing (Estimates)</h4>
+      <ul>
+        <li>Suit Tailoring: ₱1,500 – ₱3,000</li>
+        <li>Dress Alteration: ₱500 – ₱1,200</li>
+        <li>Zipper Repair: ₱200 – ₱400</li>
+        <li>Pants Hemming: ₱150 – ₱300</li>
+      </ul>
+      <p>Contact us for a precise quote based on your garment and needs.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript would be linked here in a separated file -->
+</body>
+</html>
