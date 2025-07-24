@@ -44,12 +44,51 @@ h1, h2, h3 {
 .sticky-header h1 {
   font-size: 1.5rem;
   margin: 0;
+  order: 1;
+}
+
+.contact-number {
+  margin: 0;
+  font-size: 0.9rem;
+  order: 3;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  order: 2;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Navigation */
+nav {
+  order: 4;
+  width: 100%;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 nav ul li a {
@@ -57,15 +96,12 @@ nav ul li a {
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: 500;
+  padding: 5px 0;
+  display: block;
 }
 
 nav ul li a:hover {
   color: #ffc107;
-}
-
-.contact-number {
-  margin: 0;
-  font-size: 0.9rem;
 }
 
 /* Hero section */
@@ -215,22 +251,61 @@ footer .social a:hover {
   cursor: pointer;
 }
 
-/* Responsive */
+/* Mobile Menu Styles */
 @media (max-width: 768px) {
   body {
-    padding-top: 120px; /* More padding for mobile header */
+    padding-top: 60px;
   }
   
-  .sticky-header .container {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .contact-number {
+    order: 4;
+    display: block;
+  }
+  
+  nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #222;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  
+  nav.active {
+    transform: translateY(0);
   }
   
   nav ul {
     flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Hamburger animation */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Other responsive styles */
+  .sticky-header .container {
+    flex-direction: row;
+    text-align: center;
     gap: 10px;
-    margin: 10px 0;
   }
   
   .portfolio-grid {
