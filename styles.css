@@ -9,6 +9,7 @@ body {
   line-height: 1.6;
   color: #333;
   background: #fff;
+  padding-top: 80px; /* Add padding to account for sticky header */
 }
 .container {
   max-width: 1200px;
@@ -18,33 +19,56 @@ body {
 h1, h2, h3 {
   margin-bottom: 10px;
 }
-header {
+
+/* Sticky Header */
+.sticky-header {
   background: #222;
   color: #fff;
-  padding: 20px 0;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
-header h1 {
-  display: inline-block;
+
+.sticky-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+.sticky-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
-  float: right;
+  gap: 20px;
 }
+
 nav ul li a {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
+
 nav ul li a:hover {
   color: #ffc107;
 }
+
 .contact-number {
-  margin-top: 10px;
+  margin: 0;
+  font-size: 0.9rem;
 }
 
-/* Hero section - UPDATED */
+/* Hero section */
 .hero {
   background: #222 url('https://images.pexels.com/photos/769749/pexels-photo-769749.jpeg') center/cover no-repeat;
   min-height: 70vh;
@@ -55,6 +79,7 @@ nav ul li a:hover {
   text-align: center;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
   padding: 20px;
+  margin-top: -80px; /* Offset the body padding */
 }
 .hero h2 {
   font-size: 2.5rem;
@@ -146,13 +171,21 @@ section h3 {
 footer {
   background: #111;
   color: #eee;
-  padding: 20px 0;
+  padding: 30px 0;
   text-align: center;
+}
+footer .social {
+  margin-top: 15px;
 }
 footer .social a {
   color: #ffc107;
   text-decoration: none;
-  margin: 0 5px;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+footer .social a:hover {
+  color: #fff;
 }
 
 /* Modal */
@@ -184,12 +217,22 @@ footer .social a {
 
 /* Responsive */
 @media (max-width: 768px) {
+  body {
+    padding-top: 120px; /* More padding for mobile header */
+  }
+  
+  .sticky-header .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
   nav ul {
     flex-direction: column;
-    float: none;
-    text-align: center;
-    margin-top: 15px;
+    gap: 10px;
+    margin: 10px 0;
   }
+  
   .portfolio-grid {
     flex-direction: column;
   }
@@ -198,5 +241,10 @@ footer .social a {
   }
   .hero h2 {
     font-size: 2rem;
+  }
+  
+  footer .social a {
+    font-size: 1.2rem;
+    margin: 0 5px;
   }
 }
