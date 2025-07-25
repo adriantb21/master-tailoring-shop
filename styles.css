@@ -40,14 +40,13 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0 20px; /* Add horizontal padding */
+  padding: 0 20px;
 }
 
 .sticky-header h1 {
   font-size: 1.5rem;
   margin: 0;
-  white-space: nowrap; /* Prevent wrapping */
-  flex-shrink: 0; /* Prevent shrinking */
+  white-space: nowrap;
   order: 1;
 }
 
@@ -56,17 +55,14 @@ h1, h2, h3 {
   margin: 0;
   font-size: 0.9rem;
   white-space: nowrap;
-  flex-shrink: 0; /* Prevent shrinking */
-  order: 3;
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-  display: none;
+  order: 2;
+  margin-left: auto; /* This pushes it to the right */
+  padding: 0 20px; /* Add some spacing */
 }
 
 /* Hamburger Menu */
 .menu-toggle {
-  order: 2;
+  order: 4;
   width: 30px;
   height: 20px;
   display: flex;
@@ -74,7 +70,6 @@ h1, h2, h3 {
   justify-content: space-between;
   cursor: pointer;
   z-index: 1001;
-  display: none;
 }
 
 .menu-toggle span {
@@ -87,10 +82,8 @@ h1, h2, h3 {
 
 /* Navigation Styles */
 nav {
-  order: 4;
+  order: 5;
   width: 100%;
-  margin: 0 auto; /* Center the navigation */
-  padding: 0 20px; /* Add some padding */
 }
 
 nav ul {
@@ -113,6 +106,114 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #ffc107;
+}
+
+/* For larger screens */
+@media (min-width: 993px) {
+  .contact-number {
+    order: 3;
+    margin-left: 0;
+  }
+  
+  nav {
+    order: 2;
+    width: auto;
+    margin-left: auto;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 992px) {
+  .contact-number {
+    order: 2;
+    margin-left: auto;
+    padding-right: 20px;
+  }
+  
+  .menu-toggle {
+    order: 3;
+  }
+  
+  nav {
+    order: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-number {
+    order: 2;
+    display: block;
+    margin-left: auto;
+    padding-right: 15px;
+  }
+  
+  /* Mobile Menu Styles */
+  body {
+    padding-top: 60px;
+  }
+  
+  .sticky-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #222;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  
+  nav.active {
+    transform: translateY(0);
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Hamburger animation */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Other responsive styles */
+  .portfolio-grid {
+    flex-direction: column;
+  }
+  .portfolio-grid img {
+    width: 100%;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  footer .social a {
+    font-size: 1.2rem;
+    margin: 0 5px;
+  }
 }
 
 /* Hero section */
@@ -260,110 +361,4 @@ footer .social a:hover {
   top: 10px;
   font-size: 24px;
   cursor: pointer;
-}
-
-/* Mobile Menu Styles */
-@media (max-width: 992px) {
-  .sticky-header .container {
-    padding: 15px 20px;
-  }
-  
-  .menu-toggle {
-    order: 3; /* Move to the right */
-  }
-  
-  nav {
-    order: 4;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .contact-number {
-    order: 2; /* Position between logo and menu toggle */
-    display: block;
-    margin-left: auto; /* Push to the right */
-    padding-right: 20px; /* Space before menu toggle */
-    margin-top: 0;
-    width: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding-top: 60px;
-  }
-  
-  .sticky-header h1 {
-    font-size: 1.3rem;
-  }
-  
-  .menu-toggle {
-    display: flex;
-  }
-  
-  .contact-number {
-    order: 4;
-    display: block;
-    font-size: 0.8rem;
-    padding-right: 15px;
-    margin-left: 0;
-  }
-  
-  nav {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #222;
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    transform: translateY(-150%);
-    transition: transform 0.3s ease;
-    z-index: 999;
-  }
-  
-  nav.active {
-    transform: translateY(0);
-  }
-  
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  /* Hamburger animation */
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  
-  /* Other responsive styles */
-  .sticky-header .container {
-    flex-direction: row;
-    text-align: center;
-    gap: 10px;
-  }
-  
-  .portfolio-grid {
-    flex-direction: column;
-  }
-  .portfolio-grid img {
-    width: 100%;
-  }
-  .hero h2 {
-    font-size: 2rem;
-  }
-  
-  footer .social a {
-    font-size: 1.2rem;
-    margin: 0 5px;
-  }
 }
