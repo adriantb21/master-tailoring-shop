@@ -362,3 +362,20 @@ footer .social a:hover {
   font-size: 24px;
   cursor: pointer;
 }
+.hero-cta-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.hero-cta-btn:hover {
+  background: #fff;
+  color: #333;
+}
