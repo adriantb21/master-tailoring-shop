@@ -379,3 +379,13 @@ footer .social a:hover {
   background: #fff;
   color: #333;
 }
+.before-after-set {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.before-after-set img {
+  width: 50%;
+  border-radius: 8px;
+  object-fit: cover;
+}
