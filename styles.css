@@ -218,7 +218,7 @@ nav ul li a:hover {
 
 /* Hero section */
 .hero {
-  background: #222 url('https://images.pexels.com/photos/769749/pexels-photo-769749.jpeg') center/cover no-repeat;
+  background: #222;
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -257,18 +257,7 @@ nav ul li a:hover {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
-.hero button {
-  background: #ffc107;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-  margin-top: 20px;
-}
-.hero button:hover {
-  background: #e0a800;
-}
+
 /* Hero CTA buttons — equal size and style */
 .hero button#openPricing,
 .hero .hero-cta-btn {
@@ -464,10 +453,7 @@ footer .social a:hover {
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
-.hero-cta-btn:hover {
-  background: #fff;
-  color: #333;
-}
+
 .before-after-set {
   display: flex;
   gap: 10px;
