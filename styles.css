@@ -269,6 +269,71 @@ nav ul li a:hover {
 .hero button:hover {
   background: #e0a800;
 }
+/* Hero CTA buttons — equal size and style */
+.hero button#openPricing,
+.hero .hero-cta-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  min-width: 180px;
+  text-align: center;
+}
+
+.hero button#openPricing {
+  background: #c9952a;
+  color: #fff;
+  border: 2px solid #c9952a;
+}
+
+.hero button#openPricing:hover {
+  background: #a87c22;
+  border-color: #a87c22;
+}
+
+.hero .hero-cta-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.hero .hero-cta-btn:hover {
+  background: #fff;
+  color: #333;
+}
+
+/* Hero text — better readability */
+.hero h2 {
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.hero p {
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Dark overlay on hero for better text contrast */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
 
 /* Sections */
 section {
