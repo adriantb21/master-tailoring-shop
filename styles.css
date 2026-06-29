@@ -225,9 +225,8 @@ nav ul li a:hover {
   justify-content: center;
   color: white;
   text-align: center;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
   padding: 20px;
-  margin-top: -80px; /* Offset the body padding */
+  margin-top: -80px;
 }
 .hero {
   position: relative;
