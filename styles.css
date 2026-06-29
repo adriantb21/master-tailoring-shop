@@ -9,7 +9,7 @@ body {
   line-height: 1.6;
   color: #333;
   background: #fff;
-  padding-top: 80px; /* Add padding to account for sticky header */
+  padding-top: 80px;
 }
 .container {
   max-width: 1200px;
@@ -34,7 +34,6 @@ h1, h2, h3 {
   transition: all 0.3s ease;
 }
 
-/* Updated Sticky Header Styles */
 .sticky-header .container {
   display: flex;
   justify-content: space-between;
@@ -50,14 +49,14 @@ h1, h2, h3 {
   order: 1;
 }
 
-/* Contact Number Styles */
+/* Contact Number */
 .contact-number {
   margin: 0;
   font-size: 0.9rem;
   white-space: nowrap;
   order: 2;
-  margin-left: auto; /* This pushes it to the right */
-  padding: 0 20px; /* Add some spacing */
+  margin-left: auto;
+  padding: 0 20px;
 }
 
 /* Hamburger Menu */
@@ -80,7 +79,7 @@ h1, h2, h3 {
   transition: all 0.3s ease;
 }
 
-/* Navigation Styles */
+/* Navigation */
 nav {
   order: 5;
   width: 100%;
@@ -108,62 +107,54 @@ nav ul li a:hover {
   color: #ffc107;
 }
 
-/* For larger screens */
+/* Desktop */
 @media (min-width: 993px) {
   .contact-number {
     order: 3;
     margin-left: 0;
   }
-  
   nav {
     order: 2;
     width: auto;
     margin-left: auto;
   }
-  
   .menu-toggle {
     display: none;
   }
 }
 
-/* Mobile styles */
+/* Tablet */
 @media (max-width: 992px) {
   .contact-number {
     order: 2;
     margin-left: auto;
     padding-right: 20px;
   }
-  
   .menu-toggle {
     order: 3;
   }
-  
   nav {
     order: 4;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
   .contact-number {
     order: 2;
     display: block;
     margin-left: auto;
     padding-right: 15px;
   }
-  
-  /* Mobile Menu Styles */
-  body {
-    padding-top: 60px;
-  }
-  
   .sticky-header h1 {
     font-size: 1.3rem;
   }
-  
   .menu-toggle {
     display: flex;
   }
-  
   nav {
     position: fixed;
     top: 60px;
@@ -176,30 +167,22 @@ nav ul li a:hover {
     transition: transform 0.3s ease;
     z-index: 999;
   }
-  
   nav.active {
     transform: translateY(0);
   }
-  
   nav ul {
     flex-direction: column;
     gap: 15px;
   }
-  
-  /* Hamburger animation */
   .menu-toggle.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-  
   .menu-toggle.active span:nth-child(2) {
     opacity: 0;
   }
-  
   .menu-toggle.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-  
-  /* Other responsive styles */
   .portfolio-grid {
     flex-direction: column;
   }
@@ -209,15 +192,16 @@ nav ul li a:hover {
   .hero h2 {
     font-size: 2rem;
   }
-  
   footer .social a {
     font-size: 1.2rem;
     margin: 0 5px;
   }
 }
 
-/* Hero section */
+/* ── Hero Section ── */
 .hero {
+  position: relative;
+  overflow: hidden;
   background: #222;
   min-height: 70vh;
   display: flex;
@@ -228,10 +212,8 @@ nav ul li a:hover {
   padding: 20px;
   margin-top: -80px;
 }
-.hero {
-  position: relative;
-  overflow: hidden;
-}
+
+/* Slideshow slides */
 .hero-slides {
   position: absolute;
   inset: 0;
@@ -248,13 +230,35 @@ nav ul li a:hover {
 .hero-slide.active {
   opacity: 1;
 }
-.hero .container {
-  position: relative;
+
+/* Dark overlay — sits above slides, below content */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+
+/* Hero content — sits above overlay */
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero text */
 .hero h2 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+  margin-bottom: 12px;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
 }
 
 /* Hero CTA buttons — equal size and style */
@@ -267,9 +271,10 @@ nav ul li a:hover {
   border-radius: 6px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s, border 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   min-width: 180px;
   text-align: center;
+  margin-top: 12px;
 }
 
 .hero button#openPricing {
@@ -277,7 +282,6 @@ nav ul li a:hover {
   color: #fff;
   border: 2px solid #c9952a;
 }
-
 .hero button#openPricing:hover {
   background: #a87c22;
   border-color: #a87c22;
@@ -288,42 +292,12 @@ nav ul li a:hover {
   color: #fff;
   border: 2px solid #fff;
 }
-
 .hero .hero-cta-btn:hover {
   background: #fff;
   color: #333;
 }
 
-/* Hero text — better readability */
-.hero h2 {
-  text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
-  font-size: 2.4rem;
-  color: #fff;
-}
-
-.hero p {
-  text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
-  font-size: 1.1rem;
-  color: #f0f0f0;
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-}
-
-/* Dark overlay on hero for better text contrast */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 0;
-}
-
-.hero .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Sections */
+/* ── Sections ── */
 section {
   padding: 60px 20px;
 }
@@ -340,6 +314,8 @@ section h3 {
 .services li {
   margin-bottom: 10px;
 }
+
+/* Portfolio */
 .portfolio-grid {
   display: flex;
   gap: 20px;
@@ -350,6 +326,18 @@ section h3 {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+.before-after-set {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.before-after-set img {
+  width: 50%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Testimonials */
 .testimonials blockquote {
   font-style: italic;
   margin-bottom: 15px;
@@ -369,6 +357,8 @@ section h3 {
   margin-right: 15px;
   object-fit: cover;
 }
+
+/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -376,7 +366,8 @@ section h3 {
   max-width: 600px;
   margin: 0 auto;
 }
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -392,7 +383,7 @@ section h3 {
   background: #444;
 }
 
-/* Footer */
+/* ── Footer ── */
 footer {
   background: #111;
   color: #eee;
@@ -413,12 +404,14 @@ footer .social a:hover {
   color: #fff;
 }
 
-/* Modal */
+/* ── Modal ── */
 .modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.5);
   justify-content: center;
   align-items: center;
@@ -438,28 +431,4 @@ footer .social a:hover {
   top: 10px;
   font-size: 24px;
   cursor: pointer;
-}
-.hero-cta-btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 12px 28px;
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-}
-
-.before-after-set {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-.before-after-set img {
-  width: 50%;
-  border-radius: 8px;
-  object-fit: cover;
 }
